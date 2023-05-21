@@ -1,0 +1,16 @@
+@import "bootstrap/scss/bootstrap";
+@import 'vars';
+
+body {
+	margin: 0;
+	font-family: 'Quicksand', sans-serif;
+    background-color: var(--color-body);
+}
+
+h2, .h2 {
+    font-weight: var(--typeHeaderWeight);
+    font-style: normal;
+    letter-spacing: var(--typeHeaderSpacing);
+    line-height: var(--typeHeaderLineHeight);
+    word-break: break-word;
+}

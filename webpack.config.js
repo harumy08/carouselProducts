@@ -1,4 +1,5 @@
 const path = require('path');
+const autoprefixer = require('autoprefixer')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -14,7 +15,11 @@ module.exports = {
         extensions: ['.js', '.jsx'],
         alias: {
             '@components': path.resolve(__dirname, 'src/components/'),
-            '@pages': path.resolve(__dirname, 'src/pages/')
+            '@containers': path.resolve(__dirname, 'src/containers/'),
+            '@pages': path.resolve(__dirname, 'src/pages/'),
+            '@styles': path.resolve(__dirname, 'src/styles'),
+            '@icons': path.resolve(__dirname, 'src/assets/icons/'),
+            '@images': path.resolve(__dirname, 'src/assets/images/'),
         }
     },
     module: {
@@ -35,11 +40,26 @@ module.exports = {
             ]
             },
             {
-                test: /\.(css)$/,
+                test: /\.(css|scss)$/,
                 use:[
-                "css-loader"
+                    {loader: "style-loader"},
+                    {loader: "css-loader"},
+                    {loader: "sass-loader"},
+                    {loader: "postcss-loader",
+                    options: {
+                        postcssOptions: {
+                          plugins: () => [
+                            autoprefixer
+                          ]
+                        }
+                      }
+                    },
                 ]
             },
+            {
+				test: /\.(png|svg|jpg|gif)$/,
+				type: 'asset'
+			}
         ]
     },
     plugins:[
@@ -52,12 +72,6 @@ module.exports = {
         }),
     ],
     devServer:{
-        //contentBase: path.join(__dirname, 'dist'),
-        /*static: {
-            directory: path.join(__dirname, 'public'),
-            },
-        compress: true,
-        port: 3005,*/
         historyApiFallback: true,
     }
 }

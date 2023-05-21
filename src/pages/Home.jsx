@@ -1,9 +1,10 @@
 import React from 'react';
+import Carousel from '@containers/Carousel';
 
 const Home = () => {
 	return (
 		<>
-			<h1>Hola !</h1>
+			<Carousel />
 		</>
 	);
 }
