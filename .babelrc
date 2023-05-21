@@ -10,3 +10,5 @@
 		"@babel/plugin-transform-runtime"
 	]
 }
+
+//Archivo configuracion de Babel

@@ -3,7 +3,7 @@ import '@styles/Header.scss';
 
 const Header = () => {
     return (
-		<nav><h1>Natalia Muñoz</h1></nav>
+		<nav><h1>Natalia Muñoz Front End Developer</h1></nav>
         );
 }
 

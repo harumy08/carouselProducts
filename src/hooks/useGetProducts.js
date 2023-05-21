@@ -1,3 +1,7 @@
+//Se creo un hook personalizado para consumir el servicio con axios,
+//despues utilizarlo en el componente o componentes que lo requieran
+//se limita que solo traiga 10 registros, ya que son los que se usa para este ejercicio
+
 import { useEffect, useState } from "react";
 import axios from 'axios';
 

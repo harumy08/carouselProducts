@@ -1,24 +1,24 @@
+//En este archivo es donde envío el producto a mi componente padre, tambien configuro mi slider
 import  React, { useState } from 'react';
-import ProductDetail from '@components/ProductDetail';
+import ProductDetail from '@components/ProductDetail';//Llamo a mi componente hijo
 
-import Slider from 'react-slick'
+import Slider from 'react-slick' //Utilizo el plugin Slider de react-slick para configurar mi Slider
 
-import useGetProducts from '@hooks/useGetProducts';
+import useGetProducts from '@hooks/useGetProducts';//Se realizo un hook personalizado para consumir un rest api demo con productos
 
-import '@styles/Carousel.scss';
+import '@styles/Carousel.scss';//Hojas de estilos que se usan en este componente
 import '@styles/Controls.scss';
 import '@styles/ProgressBar.scss';
 
-const API = 'http://api.escuelajs.co/api/v1/products';
+const API = 'http://api.escuelajs.co/api/v1/products';//URL de RestApi Demo
 
 const Carousel = () => {
     const products = useGetProducts(API);
 
-    const [progress, setProgress] = useState(0);
-    const [slideToShow, setslideToShow] = useState(1);
+    const [progress, setProgress] = useState(0);//Inicializo progress en valor inicial del estado en 0, esto me ayudara para despues hacer mi scroll
+    const [slideToShow, setslideToShow] = useState(1);//Inicializo slideToShow en valor inicial del estado en 1, ya que me permite que mi scroll comience a contar por cada producto
 
     const settings = {
-        dotsClass: "slick-dots slick-thumb",
         infinite: true,
         speed: 500,
         slidesToShow: 5,
@@ -55,6 +55,8 @@ const Carousel = () => {
 
     };
 
+//Primero consumo las caracteristicas de mi Slider, despues utilizo .map para itinerar por mis elementos, los cuales comparto con mi componente
+//hijo agrego mi progress bar, cuyo ancho lo obtengo por la funcion integrada en las características de mi Slider
 
     return (
         <>

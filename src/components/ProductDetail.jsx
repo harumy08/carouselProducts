@@ -1,8 +1,8 @@
 import React from 'react';
-import '@styles/ProductDetail.scss';
-import '@styles/Responsive.scss';
+import '@styles/ProductDetail.scss';//Se agregan hojas de estilos para el detalle de producto
+import '@styles/Responsive.scss';//Se agregan hojas de estilos para el detalle de producto en versión mobile
 
-const ProductDetail = ({ product }) => {
+const ProductDetail = ({ product }) => {//Obtengo la lista de productos desde el componente padre e imprimo los datos que necesito
 	return (
 		<>
 			<div className="p-3">
