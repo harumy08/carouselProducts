@@ -1,0 +1,14 @@
+.txt {
+    background-color: #fdf9f5;
+    background-color: var(--colorAlt);
+    color: #333029;
+    color: var(--colorAltText);
+    margin: 0;
+    padding: 30px 10px;
+    p{
+        font-size: calc(var(--typeBaseSize)*1.45);
+        font-style: italic;
+        text-align: center;
+        color:#333029;
+    }
+}

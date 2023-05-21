@@ -51,10 +51,6 @@ const Carousel = () => {
 
             afterChange: current =>{
                 setProgress(100 / (10 - slideToShow + 1) * (current + 1));
-                console.log(progress);
-            /*return () => {
-                clearInterval(timer);
-            };*/
         }
 
     };

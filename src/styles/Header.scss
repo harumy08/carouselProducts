@@ -1,0 +1,10 @@
+@import 'vars';
+
+nav {
+	display: flex;
+	justify-content: center;
+	padding: 0 24px;
+    background: var(--black);
+    color: var(--white);
+    font-size: calc(var(--typeBaseSize)*1.22);
+}
