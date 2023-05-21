@@ -17,7 +17,6 @@ const Carousel = () => {
 
     const [progress, setProgress] = useState(0);//Inicializo progress en valor inicial del estado en 0, esto me ayudara para despues hacer mi scroll
     const [slideToShow, setslideToShow] = useState(1);//Inicializo slideToShow en valor inicial del estado en 1, ya que me permite que mi scroll comience a contar por cada producto
-
     const settings = {
         infinite: true,
         speed: 500,
@@ -48,13 +47,12 @@ const Carousel = () => {
                 }
             }
         ],
-
+    
             afterChange: current =>{
                 setProgress(100 / (10 - slideToShow + 1) * (current + 1));
         }
-
+    
     };
-
 //Primero consumo las caracteristicas de mi Slider, despues utilizo .map para itinerar por mis elementos, los cuales comparto con mi componente
 //hijo agrego mi progress bar, cuyo ancho lo obtengo por la funcion integrada en las características de mi Slider
 
