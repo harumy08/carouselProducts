@@ -4,7 +4,7 @@ import '@styles/ProductDetail.scss';
 const ProductDetail = ({ product }) => {
 	return (
 		<>
-			<div className="col-md-3">
+			<div className="col">
 				<div className="p-3">
 					<div className="ProductItem card item">
 						<img src={product.images[0]} className="card-img-top" alt={product.title} />
