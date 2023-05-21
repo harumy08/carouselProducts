@@ -13,9 +13,15 @@ Estoy usando Bootstrap con preprocesador SASS, ya que me da mas libertad para us
 Tener Node y npm instalados o descárguelos aqui: https://nodejs.org/en
 
 # Instalación
+
 1.Clonar el proyecto
+
 2.cd 
+
 3.Para instalar node_modules y otras dependencias y dependencias de desarrollo, ejecute los comandos:
+
 npm install
-4.Para ejecutar el proyecto localmente, ejecute
+
+4.Para ejecutar el proyecto localmente, ejecute:
+
 npm run start
