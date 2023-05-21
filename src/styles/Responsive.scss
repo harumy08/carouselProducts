@@ -1,0 +1,11 @@
+@media screen and (max-width: 414px) {
+    .item {
+        .title {
+            font-size: calc(var(--typeBaseSize)*1.12) !important;
+            position: relative;
+            margin-bottom: 20px;
+            text-align: center;
+            color: var(--white);
+        }
+    }
+}
