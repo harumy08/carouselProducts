@@ -1,0 +1,33 @@
+@import 'vars';
+
+.progress-bar__container {
+    width: 80%;
+    height: 10px;
+    border-radius: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s;
+    will-change: transform;
+    box-shadow: 0 0 5px var(--color-body);
+}
+.progress-bar {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left:0%;
+    content: "";
+    background:linear-gradient(var(--color-body),#f9ece0) !important;  
+    top:0;
+    bottom: 0;
+    border-radius: inherit;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    color: white;
+    font-family: sans-serif;
+    transition: all 0.5s;
+    will-change: transform;
+}
+.progress-bar__text {
+    color: white;
+}

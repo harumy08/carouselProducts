@@ -19,3 +19,11 @@
 		}
 	}
 }
+
+.slick-next, .slick-prev {
+    width: 60px !important;
+    height: 60px !important;
+	&:before{
+		font-size: 60px;
+	}
+}

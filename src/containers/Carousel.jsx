@@ -1,4 +1,4 @@
-import  { React } from 'react';
+import  React, { useState } from 'react';
 import ProductDetail from '@components/ProductDetail';
 
 import Slider from 'react-slick'
@@ -7,18 +7,27 @@ import useGetProducts from '@hooks/useGetProducts';
 
 import '@styles/Carousel.scss';
 import '@styles/Controls.scss';
+import '@styles/ProgressBar.scss';
 
 const API = 'http://api.escuelajs.co/api/v1/products';
 
 const Carousel = () => {
     const products = useGetProducts(API);
 
+    const [progress, setProgress] = useState(0);
+    const [slideToShow, setslideToShow] = useState(1);
+
     const settings = {
-        dots: true,
+        dotsClass: "slick-dots slick-thumb",
         infinite: true,
         speed: 500,
         slidesToShow: 5,
         slidesToScroll: 1,
+        swipeToSlide: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        pauseOnHover: true,
+        scrollBar: true,
         responsive: [
             {
                 breakpoint: 1400,
@@ -38,8 +47,18 @@ const Carousel = () => {
                     slidesToShow: 2,
                 }
             }
-        ]
+        ],
+
+            afterChange: current =>{
+                setProgress(100 / (10 - slideToShow + 1) * (current + 1));
+                console.log(progress);
+            /*return () => {
+                clearInterval(timer);
+            };*/
+        }
+
     };
+
 
     return (
         <>
@@ -51,6 +70,9 @@ const Carousel = () => {
                     <ProductDetail product={product} key={product.id} />
                 ))}
             </Slider>
+            <div className="progress-bar__container">
+                <div className="progress-bar" style={{width: `${progress}%`}}></div>  
+            </div>
         </div>
         </>
 	);
