@@ -16,7 +16,7 @@ Tener Node y npm instalados o descárguelos aqui: https://nodejs.org/en
 
 1.Clonar el proyecto
 
-2.cd 
+2.cd carouselProducts
 
 3.Para instalar node_modules y otras dependencias y dependencias de desarrollo, ejecute los comandos:
 
